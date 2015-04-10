@@ -1,0 +1,22 @@
+{
+  "name": "trackthis",
+  "version": "1.0.0",
+  "description": "A module that simplifies communication with the TrackThis API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Islive/trackthis.git"
+  },
+  "keywords": [
+    "trackthis"
+  ],
+  "author": "RWOverdijk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Islive/trackthis/issues"
+  },
+  "homepage": "https://github.com/Islive/trackthis"
+}
