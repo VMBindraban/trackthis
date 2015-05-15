@@ -1,7 +1,5 @@
-var _         = require('lodash'),
-    Promise   = require('bluebird'),
-    Api       = require('./lib/api'),
-    Transport = require('./lib/transport');
+var Api           = require('./lib/api'),
+    configFactory = require('./lib/config-factory');
 
 /**
  * Create a new trackthis instance.
@@ -11,16 +9,8 @@ var _         = require('lodash'),
  * @constructor
  */
 function TrackThis (config) {
-  this.config = _.defaults(config, {
-    endpoint: 'http://trackthis.nl/api/action',
-    auth    : {
-      username: '',
-      password: ''
-    }
-  });
-
-  this.transport = new Transport(this.config);
-  this.api       = new Api(this.transport);
+  this.config  = configFactory(config);
+  this.api     = new Api(this.config);
 }
 
 module.exports = TrackThis;
