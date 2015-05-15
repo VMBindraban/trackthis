@@ -36,6 +36,7 @@ This library is loosely based on the API.
 All methods in this library support both callback style and promises. It's entirely up to you which you use.
 This library uses the [bluebird promises](https://github.com/petkaantonov/bluebird) library.
 
+-----
 
 ### .searchAccounts(filters[, done])
 Search for accounts based on filters.
@@ -59,6 +60,7 @@ trackthis.api.searchAccounts({username : 'kaatje'})
 | filters   | Object   | The name of the recipient                              |
 | [done]    | Function | Optional callback, if you don't want to use promises.  |
 
+-----
 
 ### .findFull(partnerCode[, done])
 Retrieve all known information for an account based on partner code.
@@ -81,6 +83,7 @@ trackthis.api.findFull(123)
 | partnerCode | Number   | The partnerCode to get the information for.            |
 | [done]      | Function | Optional callback, if you don't want to use promises.  |
 
+-----
 
 ### .findAccount(username[, done])
 Find information for an account username.
@@ -105,6 +108,7 @@ trackthis.api.findAccount('kaatje')
 
 **Note:** The available filters are the same as those supplied by `.searchAccounts()`.
 
+-----
 
 ### .findPerformer(username[, done])
 Find information based on a performer username.
@@ -131,6 +135,7 @@ trackthis.api.findPerformer('kaatje')
 
 **Note:** The available filters are the same as those supplied by `.searchAccounts()`.
 
+-----
 
 ### .findStudio(username[, done])
 Find information based on a studio username.
@@ -157,6 +162,7 @@ trackthis.api.findStudio('studioName')
 
 **Note:** The available filters are the same as those supplied by `.searchAccounts()`.
 
+-----
 
 ### .createAccount(accountOptions[, done])
 Register a new account with TrackThis. Parameter `accountOptions` accepts a `type` and a `username`. 
@@ -179,6 +185,7 @@ trackthis.api.createAccount({type: 'webcam', username: 'lookatme'})
 | accountOptions | Object   | Username and Type for the new account.                 |
 | [done]         | Function | Optional callback, if you don't want to use promises.  |
 
+-----
 
 ### .editAccount(partnerCode, changes[, done])
 Edit the account properties for `partnerCode`. 
@@ -203,6 +210,7 @@ trackthis.api.editAccount(123, {email: 'new@domain.org})
 | changes     | Object   | The changes to apply.                                  |
 | [done]      | Function | Optional callback, if you don't want to use promises.  |
 
+-----
 
 ### .registerPerformer(performerOptions[, done])
 Create a new performer account.
@@ -231,6 +239,7 @@ trackthis.api.registerPerformer({
 | performerOptions | Object   | Options for the new performer account.                 |
 | [done]           | Function | Optional callback, if you don't want to use promises.  |
 
+-----
 
 ### .validateCredentials(credentials[, done])
 Validate the credentials for an account.
