@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "description": "A module that simplifies communication with the TrackThis API.",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git@github.com:Islive/trackthis.git"
@@ -22,6 +21,9 @@
     "JSONStream": "^0.10.0",
     "bluebird": "^2.9.24",
     "lodash": "^3.6.0",
-    "request": "^2.55.0"
+    "mysql": "^2.6.2",
+    "request": "^2.55.0",
+    "require-all": "^1.0.0",
+    "sequelize": "^2.0.6"
   }
 }
