@@ -269,3 +269,39 @@ trackthis.api.validateCredentials({
 | ----------- | -------- | ------------------------------------------------------ |
 | credentials | Object   | Credentials to check.                                  |
 | [done]      | Function | Optional callback, if you don't want to use promises.  |
+
+
+=====
+
+### .findPayments(filterOptions[, done])
+Find payments based on the given options
+This method This method searches for payments with the given criteria, if so return the payment data other an `false`
+Argument `filterOptions` accepts properties `grouping`, `period`, `date` and `filters`.
+
+#### Example
+
+```javascript
+trackthis.api.findPayments({
+  grouping: 'day',
+  period  : 'custom',
+  date    : {
+    start: '2015-01-01',
+    end  : '2015-01-31',
+  }
+}).then(function (result) {
+  if (result) {
+    // Something to work with.
+    var paymentInfo = result.data;
+  }
+}).catch(function (error) {
+  // Exception.
+});
+```
+
+#### Parameters
+
+| Parameter   | Type     | Description                                            |
+| ----------- | -------- | ------------------------------------------------------ |
+| filterOptions | Object   | Filter options                                  |
+| [done]      | Function | Optional callback, if you don't want to use promises.  |
+
