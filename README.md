@@ -274,8 +274,7 @@ trackthis.api.validateCredentials({
 =====
 
 ### .findPayments(filterOptions[, done])
-Find payments based on the given options
-This method This method searches for payments with the given criteria, if so return the payment data other an `false`
+This method searches for payments with the given criteria, and if so return the payment data otherwise an `false`
 Argument `filterOptions` accepts properties `grouping`, `period`, `date` and `filters`.
 
 #### Example
@@ -286,7 +285,7 @@ trackthis.api.findPayments({
   period  : 'custom',
   date    : {
     start: '2015-01-01',
-    end  : '2015-01-31',
+    end  : '2015-01-31'
   }
 }).then(function (result) {
   if (result) {
