@@ -165,7 +165,7 @@ trackthis.api.findStudio('studioName')
 =====
 
 ### .createAccount(accountOptions[, done])
-Register a new account with TrackThis. Parameter `accountOptions` accepts a `type` and a `username`. 
+Register a new account with TrackThis. Parameter `accountOptions` accepts a `type` and a `username`.
 
 #### Example
 
@@ -188,7 +188,7 @@ trackthis.api.createAccount({type: 'webcam', username: 'lookatme'})
 =====
 
 ### .editAccount(partnerCode, changes[, done])
-Edit the account properties for `partnerCode`. 
+Edit the account properties for `partnerCode`.
 You can find the properties available to supply [here, under *AccountV2 (edit)*](http://trackthis.nl/docs/api), parameter `changes`.
 
 #### Example
@@ -214,7 +214,7 @@ trackthis.api.editAccount(123, {email: 'new@domain.org})
 
 ### .registerPerformer(performerOptions[, done])
 Create a new performer account.
-This convenience method combines `.createAccount()` and `.editAccount()`. 
+This convenience method combines `.createAccount()` and `.editAccount()`.
 The `performerOptions` available to supply are those from `.createAccount()` and `.editAccount()` mixed.
 
 #### Example
@@ -269,3 +269,38 @@ trackthis.api.validateCredentials({
 | ----------- | -------- | ------------------------------------------------------ |
 | credentials | Object   | Credentials to check.                                  |
 | [done]      | Function | Optional callback, if you don't want to use promises.  |
+
+
+=====
+
+### .findPayments(filterOptions[, done])
+This method searches for payments with the given criteria, and if so return the payment data otherwise an `false`
+Argument `filterOptions` accepts properties `grouping`, `period`, `date` and `filters`.
+
+#### Example
+
+```javascript
+trackthis.api.findPayments({
+  grouping: 'day',
+  period  : 'custom',
+  date    : {
+    start: '2015-01-01',
+    end  : '2015-01-31'
+  }
+}).then(function (result) {
+  if (result) {
+    // Something to work with.
+    var paymentInfo = result.data;
+  }
+}).catch(function (error) {
+  // Exception.
+});
+```
+
+#### Parameters
+
+| Parameter     | Type     | Description                                            |
+| ------------- | -------- | ------------------------------------------------------ |
+| filterOptions | Object   | Filter options                                         |
+| [done]        | Function | Optional callback, if you don't want to use promises.  |
+
