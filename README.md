@@ -304,3 +304,30 @@ trackthis.api.findPayments({
 | filterOptions | Object   | Filter options                                         |
 | [done]        | Function | Optional callback, if you don't want to use promises.  |
 
+
+=====
+
+### .addProvisionCode(promotorCode, performerCode[, done])
+Add the provision code to an existing performer.
+
+#### Example
+
+```javascript
+trackthis.api.addProvisionCode(61, 100012).then(function (result) {
+  if (result) {
+    // Something to work with.
+    var performerInfo = result.data;
+  }
+}).catch(function (error) {
+  // Exception.
+});
+```
+
+#### Parameters
+
+| Parameter     | Type     | Description                                            |
+| ------------- | -------- | ------------------------------------------------------ |
+| promotorCode  | Integer  | The promotorcode                                       |
+| performerCode | Integer  | The performercode                                      |
+| [done]        | Function | Optional callback, if you don't want to use promises.  |
+
